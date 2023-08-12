@@ -3,14 +3,18 @@
 :root {
   --primary-font: 'Roboto', sans-serif;
   --accent-font: 'Raleway', sans-serif;
-  --primary-brand: #4d5ae5; /* IRIS */
-  --pressed-state: #404bbf; /* OCEAN */
-  --dark: #2e2f42; /* NAVY BLUE */
-  --text: #434455; /* SLATE */
-  --subtle-text: #8e8f99; /* LIGHT SLATE */
-  --accent: #e7e9fc; /* CORNDLOWER */
-  --light: #f4f4fd; /* CLOUD */
+
+  --primary-brand: #4d5ae5;
+  --pressed-state: #404bbf;
+  --dark: #2e2f42;
+  --text: #434455;
+  --subtle-text: #8e8f99;
+  --accent: #e7e9fc;
+  --light: #f4f4fd;
   --white: #ffffff;
+  --success: #31d0aa;
+
+  --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* ============ /VARIABLES ============= */
@@ -214,6 +218,16 @@ img {
 
 .hero {
   background-color: var(--dark);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(46, 47, 66, 0.7),
+      rgba(46, 47, 66, 0.7)
+    ),
+    url(../images/hero-section/people-office.jpg);
+  /* background-size: cover; */
+  background-size: 1440px;
+  background-repeat: no-repeat;
+  background-position: center;
   padding-top: 188px;
   padding-bottom: 188px;
 }
@@ -264,9 +278,19 @@ img {
   margin-bottom: 8px;
 }
 
+.benefit-image {
+  background-color: var(--light);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
 /* ============ /BENEFITS SECTION ============= */
 
-/* ============ WHAT-WE-DO ============= */
+/* ============ WHAT WE DO ============= */
 
 .what-we-do {
   padding-bottom: 120px;
@@ -282,9 +306,9 @@ img {
   object-fit: cover;
 }
 
-/* ============ /WHAT-WE-DO ============= */
+/* ============ /WHAT WE DO ============= */
 
-/* ============ TEAM SECTIONS ============= */
+/* ============ TEAM SECTION ============= */
 
 .team {
   background-color: var(--light);
@@ -324,9 +348,56 @@ img {
 .team-item-text {
   text-align: center;
   font-size: 16px;
+  margin-bottom: 8px;
 }
 
-/* ============ /TEAM SECTIONS ============= */
+.team-item:hover .team-item-icon-link {
+  background-color: var(--pressed-state);
+}
+
+.team-item-icons-list {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.team-item-icon-link {
+  padding: 12px;
+  background-color: var(--primary-brand);
+  display: flex;
+  border-radius: 50%;
+}
+
+.team-item-icon {
+  fill: var(--light);
+}
+
+/* ============ /TEAM SECTION ============= */
+
+/* ============ CUSTOMERS SECTION  ============= */
+
+.customers {
+  background-color: var(--white);
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.customers-list {
+  display: flex;
+  gap: 24px;
+}
+
+.customers-list-item {
+  padding: 16px 32px;
+  border-radius: 4px;
+  border: 1px solid var(--lightslate, #8e8f99);
+}
+
+.customers-icon {
+  fill: var(--subtle-text);
+}
+
+/* ============ /CUSTOMERS SECTION  ============= */
 
 /* ============ FOOTER ============= */
 
@@ -334,6 +405,15 @@ img {
   background-color: var(--dark);
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.footer-container {
+  display: flex;
+}
+
+.footer-description {
+  width: 264px;
+  margin-right: 120px;
 }
 
 .footer-logo {
@@ -347,7 +427,32 @@ img {
 
 .footer-text {
   color: var(--light);
-  width: 264px;
+}
+
+.footer-title {
+  color: var(--white);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.footer-social-list {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social-icon-link {
+  background-color: var(--primary-brand);
+  display: flex;
+  padding: 8px;
+  border-radius: 50%;
+  fill: var(--light);
+}
+
+.footer-social-icon-link:hover {
+  background-color: var(--success);
 }
 
 /* ============ /FOOTER ============= */
