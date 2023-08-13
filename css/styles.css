@@ -259,6 +259,7 @@ img {
     url(../images/hero-section/people-office.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
   padding-top: 188px;
   padding-bottom: 188px;
   max-width: 1440px;
@@ -404,8 +405,11 @@ img {
   transition: background-color var(--transition-dur-and-func);
 }
 
-.team-item:hover .team-item-icon-link,
-.team-item:focus .team-item-icon-link {
+.team-item-icon-link:focus {
+  background-color: var(--pressed-state);
+}
+
+.team-item:hover .team-item-icon-link {
   background-color: var(--pressed-state);
 }
 
@@ -578,7 +582,7 @@ img {
 .modal-close:hover,
 .modal-close:focus {
   background-color: var(--pressed-state);
-  border-color: none;
+  border: none;
 }
 
 .modal-close-icon {
