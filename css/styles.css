@@ -13,6 +13,7 @@
   --light: #f4f4fd;
   --white: #ffffff;
   --success: #31d0aa;
+  --modal-background: #fcfcfc;
 
   --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -142,6 +143,8 @@ img {
 .button-light:hover,
 .button-light:focus {
   border: 1px solid transparent;
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
+    0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
 }
 
 /* ============ /GENERAL PROPERTIES ============= */
@@ -451,11 +454,64 @@ img {
   fill: var(--light);
 }
 
-.footer-social-icon-link:hover {
+.footer-social-icon-link:hover,
+.footer-social-icon-link:focus {
   background-color: var(--success);
 }
 
 /* ============ /FOOTER ============= */
+
+/* ============ MODAL WINDOW ============ */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(46, 47, 66, 0.4);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: var(--modal-background);
+  width: 408px;
+  height: 584px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  padding: 8px;
+  display: flex;
+
+  fill: var(--accent, #e7e9fc);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--pressed-state, #404bbf);
+  border: none;
+}
+
+.modal-close-icon {
+  fill: var(--dark);
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+/* ============ /MODAL WINDOW ============ */
 
 /* ============ PORTFOLIO WORKS ============= */
 
@@ -482,9 +538,20 @@ img {
   flex-basis: calc((100% - 2 * 24px) / 3);
 }
 
+.works-card:hover {
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+}
+
 .works-card-description {
   padding: 32px 16px;
   border: 1px solid var(--accent);
+  border-top: none;
+}
+
+.works-card:hover .works-card-description {
+  border: 1px solid var(--light);
   border-top: none;
 }
 
