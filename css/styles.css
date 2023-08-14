@@ -405,11 +405,8 @@ img {
   transition: background-color var(--transition-dur-and-func);
 }
 
+.team-item-icon-link:hover,
 .team-item-icon-link:focus {
-  background-color: var(--pressed-state);
-}
-
-.team-item:hover .team-item-icon-link {
   background-color: var(--pressed-state);
 }
 
